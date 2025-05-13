@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Free Translator",
+  "version": "1.0",
+  "description": "Translate text for free using LibreTranslate",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}

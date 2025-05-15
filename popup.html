@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daraz Review Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="chart.min.js"></script>
+</head>
+<body>
+  <div id="main">
+    <h2>Daraz Review Analyzer</h2>
+    <input type="text" id="url" placeholder="Paste Daraz Product URL here..." />
+    <button id="analyzeBtn">Analyze Reviews</button>
+  </div>
+
+  <div id="result" class="hidden">
+    <button id="backBtn">← Back</button>
+    
+    <div id="loader" class="loader">
+      <div class="spinner"></div>
+      <div class="loader-text">Analyzing product reviews...</div>
+    </div>
+
+    <div id="content" class="hidden">
+      <img id="productImage" src="" alt="Product Image" />
+      <div class="product-info">
+        <h3 id="productName"></h3>
+        <div id="reviewCount" class="review-count"></div>
+      </div>
+      
+      <div class="chart-container">
+        <canvas id="sentimentChart"></canvas>
+      </div>
+
+      <h4>Common Issues Found</h4>
+      <ul id="issuesList"></ul>
+    </div>
+
+    <div id="errorState" class="empty-state hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+      </svg>
+      <p>Couldn't fetch product data. Please try again.</p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
